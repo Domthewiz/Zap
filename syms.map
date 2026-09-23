@@ -1,0 +1,7 @@
+@addresses_from "00050000-10101D00" // US v1.3.0 (v64)
+
+// TODO: PR these into RedCore
+
+// ParentMovementMgr
+    _ZN17ParentMovementMgr11linkPivotalERKN4sead7Vector3IfEEjaS4_bbbb = 0x0284B824;
+
