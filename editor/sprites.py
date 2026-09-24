@@ -12,7 +12,7 @@ class SpriteImage_Cataquack(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['Cataquack'],
             (0, 0),
         )
@@ -25,15 +25,15 @@ class SpriteImage_Biddybud(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0
+            3.75
         )
 
     @staticmethod
     def loadImages():
         SLib.loadIfNotInImageCache('BiddybudRed', 'biddybud_red.png')
         SLib.loadIfNotInImageCache('BiddybudYellow', 'biddybud_yellow.png')
-        SLib.loadIfNotInImageCache('BiddybudGreen', 'biddybud_green.png')
-        SLib.loadIfNotInImageCache('BiddybudBlue', 'biddybud_blue.png')
+        SLib.loadIfNotInImageCache('BiddybudGreens', 'biddybud_green.png')
+        SLib.loadIfNotInImageCache('BiddybudBlued', 'biddybud_blue.png')
         SLib.loadIfNotInImageCache('BiddybudPink', 'biddybud_pink.png')
     
     def dataChanged(self):
@@ -48,9 +48,9 @@ class SpriteImage_Biddybud(SLib.SpriteImage_Static):
         elif self.style == 2:
             painter.drawPixmap(0, 0, ImageCache['BiddybudYellow'])
         elif self.style == 3:
-            painter.drawPixmap(0, 0, ImageCache['BiddybudGreen'])
+            painter.drawPixmap(0, 0, ImageCache['BiddybudGreens'])
         elif self.style == 4:
-            painter.drawPixmap(0, 0, ImageCache['BiddybudBlue'])
+            painter.drawPixmap(0, 0, ImageCache['BiddybudBlued'])
         elif self.style == 5:
             painter.drawPixmap(0, 0, ImageCache['BiddybudPink'])            
 
@@ -61,7 +61,7 @@ class SpriteImage_Flaptor(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['Flaptor'],
             (0, 0),
         )
@@ -74,7 +74,7 @@ class SpriteImage_Flaptor(SLib.SpriteImage_Static):
 #    def __init__(self, parent):
 #        super().__init__(
 #            parent,
-#            4.0,
+#            3.75,
 #        )
 #
 #    #self.offset = (-4, -16)
@@ -120,7 +120,7 @@ class SpriteImage_FlyBones(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['FlyBones'],
             (0, 0),
         )
@@ -133,7 +133,7 @@ class SpriteImage_Stingby(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['Stingby'],
             (0, 0),
         )
@@ -146,7 +146,7 @@ class SpriteImage_TimeClock(SLib.SpriteImage_Static):
     def __init__(self, parent):
             super().__init__(
                 parent,
-                4.0,
+                3.75,
             )
 
     @staticmethod
@@ -187,7 +187,7 @@ class SpriteImage_AngryGrrrol(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['AngryGrrrol'],
             (0, 0),
         )
@@ -200,7 +200,7 @@ class SpriteImage_DonutBlock(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0
+            3.75
         )
     
     @staticmethod
@@ -275,7 +275,7 @@ class SpriteImage_StringBank(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['StringBank'],
             (0, 0),
         )
@@ -288,7 +288,7 @@ class SpriteImage_ActorSpawner(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['ActorSpawner'],
             (0, 0),
         )
@@ -301,7 +301,7 @@ class SpriteImage_NybbleBank(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['NybbleBank'],
             (0, 0),
         )
@@ -314,9 +314,9 @@ class SpriteImage_Clef(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['Clef'],
-            (0, -16),
+            (0, -14),
         )
 
     @staticmethod
@@ -327,7 +327,7 @@ class SpriteImage_Note(SLib.SpriteImage_Static):
     def __init__(self, parent):
         super().__init__(
             parent,
-            4.0,
+            3.75,
             ImageCache['Note'],
             (0, 0),
         )
@@ -335,6 +335,19 @@ class SpriteImage_Note(SLib.SpriteImage_Static):
     @staticmethod
     def loadImages():
         SLib.loadIfNotInImageCache('Note', 'musicnote.png')
+
+class SpriteImage_MagicPlatform(SLib.SpriteImage_Static):
+    def __init__(self, parent):
+        super().__init__(
+            parent,
+            3.75,
+            ImageCache['MagicPlatform'],
+            (-8, -8),
+        )
+
+    @staticmethod
+    def loadImages():
+        SLib.loadIfNotInImageCache('MagicPlatform', 'magic_platform.png')
 
 ImageClasses = {
     "zap:cataquack": SpriteImage_Cataquack,
@@ -352,4 +365,5 @@ ImageClasses = {
     "zap:nybble_bank": SpriteImage_NybbleBank,
     "zap:clef": SpriteImage_Clef,
     "zap:note": SpriteImage_Note,
+    "zap:magicplatform": SpriteImage_MagicPlatform,
 }

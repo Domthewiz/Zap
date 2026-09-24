@@ -4,4 +4,4 @@
 
 // ParentMovementMgr
     _ZN17ParentMovementMgr11linkPivotalERKN4sead7Vector3IfEEjaS4_bbbb = 0x0284B824;
-
+    _ZN17ParentMovementMgr12linkPivotal2ENS_23PivotalRotationSettingsE = 0x0284B7C8;
