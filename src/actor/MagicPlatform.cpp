@@ -25,7 +25,7 @@ const ActorCreateInfo zap::MagicPlatform::cCreateInfo = {
 };
 
 Profile* zap::MagicPlatform::sProfile = zap::getRegistrar()->newProfile<zap::MagicPlatform>("magicplatform")
-    .executePriority(232) // aligns visuals with
+    .executePriority(232) // aligns visuals with collision
     .createInfo(cCreateInfo)
     .build();
 
