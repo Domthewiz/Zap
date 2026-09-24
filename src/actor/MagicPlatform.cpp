@@ -202,24 +202,26 @@ void zap::MagicPlatform::setMovementParamaters(ParentMovementType movement_type)
     };
 
     switch (movement_type) {
-        case cPos_Screw:
+        case cPos_Screw: {
             mMovementMgr.setBoltSpeed(boltMovementSpeedArr[red::SpriteUtil::getNybble18(this)]);
             mMovementMgr.setBoltDirection(static_cast<DirType>(red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_GoAndCome:
+        }
+        case cPos_GoAndCome: {
             mMovementMgr.setTwoWayDistanceMultiplier(twoWayDistanceMultiplierArr[red::SpriteUtil::getNybble18(this)] + (0.01f * red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_ShiftingPlatform:
+        }
+        case cPos_ShiftingPlatform: {
             mMovementMgr.setRectPlatformInfo(static_cast<RectPlatformInfo>(red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_FloorGyration:
+        }
+        case cPos_FloorGyration: {
             mMovementMgr.setFloorGyrationAngle(0x1000000 * red::SpriteUtil::getNybbleRange(this, 17, 18));
             ParentMovementMgr::MovementProperties newproperty = mMovementMgr.getMovementProperties();
             newproperty.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
             mMovementMgr.setMovementProperties(newproperty);
+            break;
+        }
     }
 }
 
@@ -267,24 +269,24 @@ bool zap::MagicPlatform::draw() {
     return true;
 }
 
-void zap::MagicPlatform::callbackFoot(BgCollision* cc_self, ActorBgCollisionCheck* cc_other) {
-    MagicPlatform* self = (MagicPlatform*)cc_self->getOwner();
+void zap::MagicPlatform::callbackFoot(BgCollision* bc_self, ActorBgCollisionCheck* cc_other) {
+    MagicPlatform* self = (MagicPlatform*)bc_self->getOwner();
     Actor* other = cc_other->getOwner();
     if (other->getKind() == cActorKind_Player || other->getKind() == cActorKind_Yoshi) {
         self->callbackGeneral(self, static_cast<PlayerObject*>(other));
     }
 }
 
-void zap::MagicPlatform::callbackHead(BgCollision* cc_self, ActorBgCollisionCheck* cc_other) {
-    MagicPlatform* self = (MagicPlatform*)cc_self->getOwner();
+void zap::MagicPlatform::callbackHead(BgCollision* bc_self, ActorBgCollisionCheck* cc_other) {
+    MagicPlatform* self = (MagicPlatform*)bc_self->getOwner();
     Actor* other = cc_other->getOwner();
     if (other->getKind() == cActorKind_Player || other->getKind() == cActorKind_Yoshi) {
         self->callbackGeneral(self, static_cast<PlayerObject*>(other));
     }
 }
 
-void zap::MagicPlatform::callbackWall(BgCollision* cc_self, ActorBgCollisionCheck* cc_other, u8 direction) {
-    MagicPlatform* self = (MagicPlatform*)cc_self->getOwner();
+void zap::MagicPlatform::callbackWall(BgCollision* bc_self, ActorBgCollisionCheck* cc_other, u8 direction) {
+    MagicPlatform* self = (MagicPlatform*)bc_self->getOwner();
     Actor* other = cc_other->getOwner();
     if (other->getKind() == cActorKind_Player || other->getKind() == cActorKind_Yoshi) {
         self->callbackGeneral(self, static_cast<PlayerObject*>(other));
