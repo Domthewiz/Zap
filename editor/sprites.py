@@ -216,6 +216,11 @@ class SpriteImage_DonutBlock(SLib.SpriteImage_Static):
         self.widthTiles = (self.parent.spritedata[2] >> 4) + 1
         self.width = self.widthTiles * 16
 
+        self.offset = (
+            (self.widthTiles * -8) + 8,
+            0,
+        )
+
     def paint(self, painter):
         super().paint(painter)
         tileSize = 60
@@ -252,7 +257,7 @@ class SpriteImage_FrozenDonutBlock(SLib.SpriteImage_Static):
         self.width = self.widthTiles * 16
 
         self.offset = (
-            -((self.widthTiles * 16) // 2) + (0 if self.widthTiles % 2 == 1 else 0),
+            (self.widthTiles * -8) + 8,
             0,
         )
 

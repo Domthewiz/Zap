@@ -51,8 +51,10 @@ void zap::ActorDonutBlock::loadActorRes() {
         "obj_widedn3_block"
     };
     
-    mModel = AnimModel::create(cResources[mLength], cResources[mLength], 2, 2, 2, 2, 2);
+    mModel = AnimModel::create(cResources[mLength], cResources[mLength], 1, 1);
+    mModel->playTexAnim(cResources[mLength]);
     mTexAnim = mModel->getTexAnim(0);
     mTexAnim->getFrameCtrl().setPlayMode(FrameCtrl::cMode_NoRepeat);
-    mTexAnim->getFrameCtrl().setFrame(0.0f);
+    mTexAnim->getFrameCtrl().setFrame(1.0f);
+    mTexAnim->getFrameCtrl().setRate(0.0f);
 }
