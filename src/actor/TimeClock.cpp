@@ -3,7 +3,7 @@
 #include <audio/GameAudio.h>
 #include <effect/EffectCreateUtil.h>
 #include <game/CourseTimer.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <map/SwitchFlagMgr.h>
 #include <game/CourseTask.h>
 #include <map/CoinOrigin.h>
@@ -21,7 +21,7 @@ static constexpr sead::SafeArray<u32, 6> cTimes = {10, 1, 5, 30, 50, 100};
 // Register it
 Profile* zap::TimeClock::sProfile = zap::getRegistrar()->newProfile<zap::TimeClock>("timeclock")
     .resources<"timeclock">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 const ActorCreateInfo zap::TimeClock::cCreateInfo = {

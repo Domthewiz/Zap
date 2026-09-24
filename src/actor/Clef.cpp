@@ -4,7 +4,7 @@
 #include <audio/GameAudio.h>
 #include <actor/ActorMgr.h>
 #include <map/SwitchFlagMgr.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <effect/EffectID.h>
 #include <effect/EffectCreateUtil.h>
 #include <event/EventMgr.h>
@@ -58,7 +58,7 @@ const CC::CollisionData zap::Clef::cCollisionData = {
 
 Profile* zap::Clef::sProfile = zap::getRegistrar()->newProfile<zap::Clef>("clef")
     .resources<"clef">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .flag(Profile::cFlag_DrawCullCheck)
     .build();
 

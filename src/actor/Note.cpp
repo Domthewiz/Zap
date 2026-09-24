@@ -3,7 +3,7 @@
 #include <telkin/Print.h>
 #include <zap/actor/Note.h>
 #include <actor/ActorMgr.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <input/InputMgr.h>
 #include <player/PlayerObject.h>
 #include <effect/EffectCreateUtil.h>
@@ -54,7 +54,7 @@ const CC::CollisionData zap::Note::cCollisionData = {
 Profile* zap::Note::sProfile = zap::getRegistrar()->newProfile<zap::Note>("note")
     .resources<"note">(ProfileInfo::cResType_Course)
     .flag(Profile::cFlag_DrawCullCheck)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::Note::Note(const ActorCreateParam& param)

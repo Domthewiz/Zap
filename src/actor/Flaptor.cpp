@@ -1,5 +1,5 @@
 #include <zap/actor/Flaptor.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <zap/Zap.h>
 
 SEAD_RTTI_OVERRIDE_IMPL(zap::Flaptor, Enemy)
@@ -52,7 +52,7 @@ const ActorCollisionCheck::CollisionData zap::Flaptor::cCollisionData = {
 
 Profile* zap::Flaptor::sProfile = zap::getRegistrar()->newProfile<zap::Flaptor>("flaptor")
     .resources<"mokinger">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::Flaptor::Flaptor(const ActorCreateParam& param)

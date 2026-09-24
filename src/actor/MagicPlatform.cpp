@@ -2,7 +2,7 @@
 #include <zap/Zap.h>
 #include <game_info/CourseInfo.h>
 #include <map/CourseData.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <map/Bg.h>
 #include <collision/ActorBgCollisionMgr.h>
 #include <graphics/Renderer.h>
@@ -23,7 +23,7 @@ const ActorCreateInfo zap::MagicPlatform::cCreateInfo = {
 };
 
 Profile* zap::MagicPlatform::sProfile = zap::getRegistrar()->newProfile<zap::MagicPlatform>("magicplatform")
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::MagicPlatform::MagicPlatform(const ActorCreateParam& param)
