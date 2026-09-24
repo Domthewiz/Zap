@@ -1,6 +1,6 @@
 #pragma once
 
-#include "player/PlayerObject.h"
+#include <player/PlayerObject.h>
 #include <actor/Actor.h>
 #include <actor/Profile.h>
 #include <map_obj/ParentMovementMgr.h>
@@ -31,12 +31,12 @@ public:
     bool execute() override;
     bool draw() override;
 
-    void setupMovement(sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id);
+    void setupMovement(const sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id);
     void setMovementParamaters(ParentMovementType movement_type);
 
-    static void callbackFoot(BgCollision* cc_self, ActorBgCollisionCheck* cc_other);
-    static void callbackHead(BgCollision* cc_self, ActorBgCollisionCheck* cc_other);
-    static void callbackWall(BgCollision* cc_self, ActorBgCollisionCheck* cc_other, u8 direction); 
+    static void callbackFoot(BgCollision* bc_self, ActorBgCollisionCheck* cc_other);
+    static void callbackHead(BgCollision* bc_self, ActorBgCollisionCheck* cc_other);
+    static void callbackWall(BgCollision* bc_self, ActorBgCollisionCheck* cc_other, u8 direction); 
     void callbackGeneral(MagicPlatform* self, PlayerObject* other);
     
     static const ActorCreateInfo cCreateInfo;
