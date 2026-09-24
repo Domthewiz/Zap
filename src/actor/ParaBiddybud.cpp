@@ -122,24 +122,26 @@ void zap::ParaBiddybud::setMovementParamaters(ParentMovementType movement_type) 
     };
 
     switch (movement_type) {
-        case cPos_Screw:
-            mMovementHandler.setBoltSpeed(boltMovementSpeedArr[red::SpriteUtil::getNybble18(this)]);
-            mMovementHandler.setBoltDirection(static_cast<DirType>(red::SpriteUtil::getNybble19(this)));
+        case cPos_Screw: {
+            mMovementMgr.setBoltSpeed(boltMovementSpeedArr[red::SpriteUtil::getNybble18(this)]);
+            mMovementMgr.setBoltDirection(static_cast<DirType>(red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_GoAndCome:
-            mMovementHandler.setTwoWayDistanceMultiplier(twoWayDistanceMultiplierArr[red::SpriteUtil::getNybble18(this)] + (0.01f * red::SpriteUtil::getNybble19(this)));
+        }
+        case cPos_GoAndCome: {
+            mMovementMgr.setTwoWayDistanceMultiplier(twoWayDistanceMultiplierArr[red::SpriteUtil::getNybble18(this)] + (0.01f * red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_ShiftingPlatform:
-            mMovementHandler.setRectPlatformInfo(static_cast<RectPlatformInfo>(red::SpriteUtil::getNybble19(this)));
+        }
+        case cPos_ShiftingPlatform: {
+            mMovementMgr.setRectPlatformInfo(static_cast<RectPlatformInfo>(red::SpriteUtil::getNybble19(this)));
             break;
-
-        case cPos_FloorGyration:
-            mMovementHandler.setFloorGyrationAngle(0x1000000 * red::SpriteUtil::getNybbleRange(this, 17, 18));
-            ParentMovementMgr::MovementProperties newproperty = mMovementHandler.getMovementProperties();
+        }
+        case cPos_FloorGyration: {
+            mMovementMgr.setFloorGyrationAngle(0x1000000 * red::SpriteUtil::getNybbleRange(this, 17, 18));
+            ParentMovementMgr::MovementProperties newproperty = mMovementMgr.getMovementProperties();
             newproperty.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
-            mMovementHandler.setMovementProperties(newproperty);
+            mMovementMgr.setMovementProperties(newproperty);
+            break;
+        }
     }
 }
 
