@@ -2,7 +2,7 @@
 #include <actor/ActorMgr.h>
 #include <actor/MapActor.h>
 #include <map/SwitchFlagMgr.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <zap/Zap.h>
 #include <red/event/ResourceLoadEvent.h>
 #include <map/CourseData.h>
@@ -24,7 +24,7 @@ const ActorCreateInfo zap::ActorSpawnerSimple::cCreateInfo = {
 };
 
 Profile* zap::ActorSpawnerSimple::sProfile = zap::getRegistrar()->newProfile<zap::ActorSpawnerSimple>("actor_spawner_simple")
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::ActorSpawnerSimple::ActorSpawnerSimple(const ActorCreateParam& param)

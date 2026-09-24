@@ -1,6 +1,6 @@
 #include <zap/actor/ActorDonutBlock.h>
 #include <zap/Zap.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 
 SEAD_RTTI_OVERRIDE_IMPL(zap::ActorDonutBlock, red::ActorDonutBlock)
 
@@ -19,7 +19,7 @@ const ActorCreateInfo zap::ActorDonutBlock::cCreateInfo = {
 Profile* zap::ActorDonutBlock::sProfile = zap::getRegistrar()->newProfile<zap::ActorDonutBlock>("donut_block")
     .resources<"obj_chikuwa_block", "obj_widedn2_block", "obj_widedn3_block">(ProfileInfo::cResType_Course)
     .flag(Profile::cFlag_DrawCullCheck)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::ActorDonutBlock::ActorDonutBlock(const ActorCreateParam& param)

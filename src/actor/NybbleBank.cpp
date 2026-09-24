@@ -16,7 +16,7 @@ const ActorCreateInfo zap::NybbleBank::cCreateInfo = {
 };
 
 Profile* zap::NybbleBank::sProfile = zap::getRegistrar()->newProfile<zap::NybbleBank>("nybble_bank")
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::NybbleBank::NybbleBank(const ActorCreateParam& param)

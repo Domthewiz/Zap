@@ -2,7 +2,7 @@
 #include <actor/Profile.h>
 #include <player/Yoshi.h>
 #include <player/PlayerBase.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <effect/EffectCreateUtil.h>
 #include <zap/Zap.h>
 #include <zap/actor/Cataquack.h>
@@ -33,7 +33,7 @@ constexpr f32 cAnimBlendTime = 8.0f;
 
 Profile* zap::Cataquack::sProfile = zap::getRegistrar()->newProfile<zap::Cataquack>("cataquack")
     .resources<"poihana">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .flag(Profile::Flag::cFlag_DrawCullCheck)
     .build();
 

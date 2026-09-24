@@ -1,7 +1,7 @@
 #include <zap/actor/FlyBones.h>
 #include <zap/Zap.h>
 #include <actor/ActorMgr.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 
 SEAD_RTTI_OVERRIDE_IMPL(zap::FlyBones, Enemy)
 
@@ -24,7 +24,7 @@ const ActorCreateInfo zap::FlyBones::cCreateInfo = {
 // Register it
 Profile* zap::FlyBones::sProfile = zap::getRegistrar()->newProfile<zap::FlyBones>("flybones")
     .resources<"karon", "wing", "nokonokoB">(ProfileInfo::cResType_Course)
-    .createInfo(&zap::FlyBones::cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 // Hitbox data

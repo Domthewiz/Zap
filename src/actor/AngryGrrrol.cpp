@@ -1,7 +1,7 @@
 #include <zap/actor/AngryGrrrol.h>
 #include <audio/GameAudio.h>
 #include <zap/Zap.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <effect/EffectCreateUtil.h>
 
 /*

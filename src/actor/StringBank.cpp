@@ -1,8 +1,8 @@
 #include <zap/actor/StringBank.h>
 #include <zap/Zap.h>
 #include <actor/ActorMgr.h>
-#include <red/util/SpriteUtil.h>
-#include <red/util/Strybble.h>
+#include <red/utility/SpriteUtil.h>
+#include <red/utility/Strybble.h>
 
 namespace {
 
@@ -34,7 +34,7 @@ const ActorCreateInfo zap::StringBank::cCreateInfo = {
 };
 
 Profile* zap::StringBank::sProfile = zap::getRegistrar()->newProfile<zap::StringBank>("string_bank")
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::StringBank::StringBank(const ActorCreateParam& param)

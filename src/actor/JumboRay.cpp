@@ -2,7 +2,7 @@
 #include <audio/GameAudio.h>
 #include <collision/ActorBgCollisionMgr.h>
 #include <map_obj/PlayerRideUtil.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <zap/Zap.h>
 
 SEAD_RTTI_OVERRIDE_IMPL(zap::JumboRay, Actor)
@@ -21,7 +21,7 @@ const ActorCreateInfo zap::JumboRay::cCreateInfo = {
 
 Profile* zap::JumboRay::sProfile = zap::getRegistrar()->newProfile<zap::JumboRay>("jumboray")
     .resources<"manjirou">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::JumboRay::JumboRay(const ActorCreateParam& param)

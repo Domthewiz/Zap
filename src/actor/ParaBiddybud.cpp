@@ -1,6 +1,6 @@
 #include <zap/actor/ParaBiddybud.h>
 #include <zap/Zap.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <effect/EffectCreateUtil.h>
 
 SEAD_RTTI_OVERRIDE_IMPL(zap::ParaBiddybud, Enemy)
@@ -48,7 +48,7 @@ const CC::CollisionData zap::ParaBiddybud::cCollisionData = {
 
 Profile* zap::ParaBiddybud::sProfile = zap::getRegistrar()->newProfile<zap::ParaBiddybud>("para_biddybud")
     .resources<"tenten_w">(ProfileInfo::cResType_Course)
-    .createInfo(&cCreateInfo)
+    .createInfo(cCreateInfo)
     .build();
 
 zap::ParaBiddybud::ParaBiddybud(const ActorCreateParam& param)

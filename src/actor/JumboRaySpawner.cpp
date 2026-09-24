@@ -1,6 +1,6 @@
 #include <zap/actor/JumboRaySpawner.h>
 #include <zap/Zap.h>
-#include <red/util/SpriteUtil.h>
+#include <red/utility/SpriteUtil.h>
 #include <actor/ActorMgr.h>
 #include <zap/actor/JumboRay.h>
 
