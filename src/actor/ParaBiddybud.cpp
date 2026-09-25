@@ -99,7 +99,7 @@ ActorBase::Result zap::ParaBiddybud::create() {
     return cResult_Success;
 }
 
-void zap::ParaBiddybud::setupMovement(sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id) {
+void zap::ParaBiddybud::setupMovement(const sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id) {
     // use different link function if pivotal rotation, prevents glitches
     if (movement_type == ParentMovementType::cPos_CenterRotation) {
         mMovementHandler.linkPivotal(position, movement_mask, movement_id);
@@ -137,8 +137,8 @@ void zap::ParaBiddybud::setMovementParamaters(ParentMovementType movement_type) 
         }
         case cPos_FloorGyration: {
             mMovementHandler.setFloorGyrationAngle(0x1000000 * red::SpriteUtil::getNybbleRange(this, 17, 18));
-            ParentMovementMgr::MovementProperties newproperty = mMovementMgr.getMovementProperties();
-            mMovementHandler.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
+            ParentMovementMgr::MovementProperties newproperty = mMovementHandler.getMovementProperties();
+            newproperty.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
             mMovementHandler.setMovementProperties(newproperty);
             break;
         }

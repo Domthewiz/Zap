@@ -183,8 +183,8 @@ void zap::TimeClock::setMovementParamaters(ParentMovementType movement_type) {
         }
         case cPos_FloorGyration: {
             mMovementHandler.setFloorGyrationAngle(0x1000000 * red::SpriteUtil::getNybbleRange(this, 17, 18));
-            ParentMovementMgr::MovementProperties newproperty = mMovementMgr.getMovementProperties();
-            mMovementHandler.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
+            ParentMovementMgr::MovementProperties newproperty = mMovementHandler.getMovementProperties();
+            newproperty.hill_distance_offset = -16.0f * red::SpriteUtil::getNybble19(this);
             mMovementHandler.setMovementProperties(newproperty);
             break;
         }

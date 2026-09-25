@@ -1,5 +1,3 @@
-#include "actor/Actor.h"
-#include "player/PlayerBase.h"
 #include <zap/actor/MagicPlatform.h>
 #include <zap/Zap.h>
 #include <game_info/CourseInfo.h>
@@ -25,8 +23,8 @@ const ActorCreateInfo zap::MagicPlatform::cCreateInfo = {
 };
 
 Profile* zap::MagicPlatform::sProfile = zap::getRegistrar()->newProfile<zap::MagicPlatform>("magicplatform")
-    .executePriority(232) // aligns visuals with collision
     .createInfo(cCreateInfo)
+    .executePriority(232) // aligns visuals with collision
     .build();
 
 zap::MagicPlatform::MagicPlatform(const ActorCreateParam& param)
@@ -168,7 +166,7 @@ ActorBase::Result zap::MagicPlatform::create() {
     return cResult_Success;
 }
 
-void zap::MagicPlatform::setupMovement(sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id) {
+void zap::MagicPlatform::setupMovement(const sead::Vector3f& position, u32 movement_mask, ParentMovementType movement_type, u32 movement_id) {
     // use different link function if pivotal rotation, prevents glitches
     if (movement_type == ParentMovementType::cPos_CenterRotation) {
         ParentMovementMgr::PivotalRotationSettings pivotSettings;

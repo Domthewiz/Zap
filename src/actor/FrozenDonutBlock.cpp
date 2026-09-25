@@ -18,6 +18,7 @@ const ActorCreateInfo zap::FrozenDonutBlock::cCreateInfo = {
 Profile* zap::FrozenDonutBlock::sProfile = zap::getRegistrar()->newProfile<zap::FrozenDonutBlock>("frozen_donut_block")
     .resources<"obj_frozend_block", "obj_frozdn2_block", "obj_frozdn3_block">(ProfileInfo::cResType_Course)
     .flag(Profile::cFlag_DrawCullCheck)
+    .executePriority(232) // aligns visuals with collision
     .createInfo(cCreateInfo)
     .build();
 
